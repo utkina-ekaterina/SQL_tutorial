@@ -64,5 +64,13 @@ WHERE name LIKE '%be%' OR band_id = 2;
 SELECT * FROM albums 
 WHERE name LIKE '%be%' AND band_id = 2;
 
+SELECT * FROM albums 
+WHERE release_year BETWEEN 2019 AND 2022;
 
+SELECT * FROM albums 
+WHERE release_year IS NULL;
+
+DELETE FROM albums WHERE id = 4;
+
+SELECT * FROM albums;
 
