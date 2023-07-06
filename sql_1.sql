@@ -14,6 +14,6 @@ CREATE TABLE albums (
     PRIMARY KEY (id),
     FOREIGN KEY (band_id) REFERENCES bands(id)
 );
-
+-- reference - https://www.youtube.com/watch?v=p3qvj9hO_Bo
 
 
