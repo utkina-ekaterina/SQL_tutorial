@@ -19,10 +19,10 @@ CREATE TABLE albums (
 
 
 INSERT INTO bands (name) 
-VALUES ('TWICE');
+VALUES ('Band_1');
 
 INSERT INTO bands (name)
-VALUES ('BTS'), ('BLACKPINK'), ('SEVENTEEN');
+VALUES ('Band_2'), ('Band_3'), ('Band_4');
 
 SELECT * FROM bands;
 
@@ -39,7 +39,7 @@ SELECT * FROM bands ORDER BY name DESC;
 INSERT INTO albums (name, release_year, band_id) 
 VALUES ('Ready To Be', 2023, 1), 
 	   ('BE', 2020, 2),
-       ('MAP OF THE SOUL: 7', 2020, 2),
+       ('Album_1', 2020, 2),
        ('The Album', NULL, 3);
        
 SELECT * FROM albums;
@@ -100,7 +100,7 @@ GROUP BY b.id;
 SELECT b.name AS band_name, COUNT(a.id) AS num_albums
 FROM bands AS b
 LEFT JOIN albums AS a ON b.id = a.band_id
-WHERE b.name = 'TWICE'
+WHERE b.name = 'Band_1'
 GROUP BY b.id
 HAVING num_albums = 1;
 
