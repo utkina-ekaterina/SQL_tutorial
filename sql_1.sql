@@ -74,3 +74,34 @@ DELETE FROM albums WHERE id = 4;
 
 SELECT * FROM albums;
 
+SELECT * FROM bands 
+JOIN albums ON bands.id = albums.band_id;
+
+SELECT * FROM bands 
+LEFT JOIN albums ON bands.id = albums.band_id;
+
+SELECT * FROM albums 
+RIGHT JOIN bands ON bands.id = albums.band_id;
+
+
+
+SELECT AVG(release_year) FROM albums;
+
+SELECT band_id, COUNT(band_id) FROM albums
+GROUP BY band_id;
+
+
+SELECT b.name AS band_name, COUNT(a.id) AS num_albums
+FROM bands AS b
+LEFT JOIN albums AS a ON b.id = a.band_id
+GROUP BY b.id;
+
+
+SELECT b.name AS band_name, COUNT(a.id) AS num_albums
+FROM bands AS b
+LEFT JOIN albums AS a ON b.id = a.band_id
+WHERE b.name = 'TWICE'
+GROUP BY b.id
+HAVING num_albums = 1;
+
+
